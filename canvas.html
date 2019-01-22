@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#hua{
+				border: 1px solid red;
+			}
+			a {
+				display: inline-block;
+				color: #FFF;
+				background-color: #8ac007;
+				font-weight: 700;
+				font-size: 12px;
+				text-align: center;
+				padding-left: 15px;
+				padding-right: 15px;
+				padding-top: 6px;
+				padding-bottom: 6px;
+				text-decoration: none;
+				margin-left: 5px;
+				margin-top: 0;
+				margin-bottom: 5px;
+				border: 1px solid #aaa;
+				border-radius: 5px;
+				white-space: nowrap;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<a href="index.html"><font size="4" color="black">返回</font></a>
+		
+		<canvas id="hua" width="600" height="600"></canvas>
+		
+		<script type="text/javascript">
+			
+			var c = document.getElementById("hua").getContext("2d")
+			
+			c.arc(200,200,150,0,Math.PI*2)
+			c.strokeStyle="gold"
+			c.lineWidth=3
+			c.stroke()
+			
+			c.beginPath()
+			c.moveTo(30,405)
+			c.lineTo(70,405)
+			c.strokeStyle="black"
+			c.stroke()
+			c.closePath()
+			
+			c.beginPath()
+			c.moveTo(35,420)
+			c.lineTo(65,420)
+			c.strokeStyle="black"
+			c.stroke()
+			c.closePat
+			
+			c.beginPath()
+			c.moveTo(36,420)
+			c.lineTo(36,445)
+			c.strokeStyle="black"
+			c.stroke()
+			c.closePat
+			
+			c.beginPath()
+			c.moveTo(64,420)
+			c.lineTo(64,445)
+			c.strokeStyle="black"
+			c.stroke()
+			c.closePat
+			
+			c.beginPath()
+			c.moveTo(51,420)
+			c.lineTo(51,445)
+			c.strokeStyle="black"
+			c.stroke()
+			c.closePat
+			
+			c.beginPath()
+			c.moveTo(35,433)
+			c.lineTo(65,433)
+			c.strokeStyle="black"
+			c.stroke()
+			c.closePat
+			
+			c.beginPath()
+			c.moveTo(35,445)
+			c.lineTo(65,445)
+			c.strokeStyle="black"
+			c.stroke()
+			c.closePat
+			
+			c.beginPath()
+			c.moveTo(25,415)
+			c.lineTo(25,458)
+			c.strokeStyle="black"
+			c.stroke()
+			c.closePath()
+			
+			c.beginPath()
+			c.moveTo(75,415)
+			c.lineTo(75,458)
+			c.strokeStyle="black"
+			c.stroke()
+			c.closePath()
+			
+			c.beginPath()
+			c.moveTo(25,456)
+			c.lineTo(75,456)
+			c.strokeStyle="black"
+			c.stroke()
+			c.closePath()
+			
+			
+			
+		</script>
+		
+	</body>
+</html>
