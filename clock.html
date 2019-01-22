@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#hua {
+				border: 1px solid gold;
+			}
+			
+			a {
+				display: inline-block;
+				color: #FFF;
+				background-color: #8ac007;
+				font-weight: 700;
+				font-size: 12px;
+				text-align: center;
+				padding-left: 10px;
+				padding-right: 10px;
+				padding-top: 3px;
+				padding-bottom: 4px;
+				text-decoration: none;
+				margin-left: 5px;
+				margin-top: 0;
+				margin-bottom: 5px;
+				border: 1px solid #aaa;
+				border-radius: 5px;
+				white-space: nowrap;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="index.html"><font size="4" color="black">返回</font></a>
+
+		<canvas id="hua" width="800" height="800">您的网页无法加载canvas！</canvas>
+
+		<script type="text/javascript">
+			var c = document.getElementById("hua").getContext("2d")
+
+			var img = new Image();
+			img.src = "img/0.jpg"
+
+			setInterval("x1()", 1000)
+
+			function x1() {
+
+				var shi = new Date();
+				var m = shi.getSeconds();
+				var f = shi.getMinutes();
+				var s = shi.getHours()
+
+				c.clearRect(220, 220, 360, 360)
+				c.beginPath()
+				c.arc(400, 400, 250, 0, Math.PI * 2)
+				c.stroke()
+				c.closePath()
+
+				c.clip()
+				c.drawImage(img, 150, 150, 500, 500)
+				img.onload = function() {
+					c.drawImage(img, 150, 150, 500, 500)
+				}
+
+				c.font = "60px 黑体"
+
+				var i = 1;
+
+				c.fillText(i++, 490, 230)
+				c.fillText(i++, 560, 320)
+				c.fillText(i++, 590, 420)
+				c.fillText(i++, 560, 520)
+				c.fillText(i++, 490, 590)
+				c.fillText(i++, 380, 610)
+				c.fillText(i++, 280, 590)
+				c.fillText(i++, 210, 530)
+				c.fillText(i++, 190, 420)
+				c.fillText(i++, 200, 310)
+				c.fillText(i++, 260, 230)
+				c.fillText(i++, 370, 200)
+				c.font = "40px 黑体"
+				c.fillText(s + ":" + f + ":" + m, 330, 500)
+
+				for(var i = 0; i < 60; i++) {
+					c.save()
+					c.beginPath()
+					c.translate(400, 400)
+					c.rotate(Math.PI / 180 * i * 6)
+					c.moveTo(0, 230)
+					c.lineTo(0, 250)
+					c.strokeStyle = "black"
+					c.stroke()
+					c.closePath()
+					c.restore()
+				}
+				for(var i = 0; i < 12; i++) {
+					c.save()
+					c.beginPath()
+					c.translate(400, 400)
+					c.rotate(Math.PI / 180 * i * 30)
+					c.moveTo(0, 220)
+					c.lineTo(0, 250)
+					c.strokeStyle = "red"
+					c.lineWidth = 3
+					c.stroke()
+					c.closePath()
+					c.restore()
+				}
+
+				c.save()
+				c.beginPath()
+				c.translate(400, 400)
+				c.rotate(Math.PI / 180 * m * 6)
+				c.moveTo(0, 0)
+				c.lineTo(0, -180)
+				c.strokeStyle = "red"
+				c.stroke()
+				c.closePath()
+				c.restore()
+
+				f = f * 60 + m
+				c.save()
+				c.beginPath()
+				c.translate(400, 400)
+				c.rotate(Math.PI / 1800 * f)
+				c.moveTo(0, 0)
+				c.lineTo(0, -150)
+				c.strokeStyle = "gold"
+				c.lineWidth = 3
+				c.stroke()
+				c.closePath()
+				c.restore()
+
+				s = s * 3600 + f
+				c.save()
+				c.beginPath()
+				c.translate(400, 400)
+				c.rotate(Math.PI / 180 * s / 120)
+				c.moveTo(0, 0)
+				c.lineTo(0, -130)
+				c.strokeStyle = "black"
+				c.lineWidth = 2
+				c.stroke()
+				c.closePath()
+				c.restore()
+
+			}
+		</script>
+
+	</body>
+
+</html>
